@@ -112,6 +112,9 @@ main{
 }
 
 /* Content container config with cards, col and row config */
+.content-container{
+    overflow-y: auto;
+}
 
 
 /* Secondary nav config */
@@ -121,23 +124,27 @@ main{
 
 /* Content container section config */
 .content-container section{
-    margin: 1rem;
+    padding: 1.5rem 2rem 1rem 1.5rem;
 }
 
 /* Titles and subtitles config */
-.content-container section h2:first-child{
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+.section-head{
+    padding-left: 10px;
+    padding-bottom: 1rem;
 }
 
 h2,h4{
     color: white;
     font-weight: bold;
+}
+
+.col h2,h4{
     padding: 10px;
 }
 
 .subtitle{
     color: var(--grey);
+    font-size: 12px;
 }
 
 /* Rows and cols config */
@@ -151,5 +158,8 @@ h2,h4{
 .col img{
     width: 100%;
 }
+
+/* RESPONSIVE */
+
 
 
