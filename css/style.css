@@ -124,7 +124,7 @@ main{
 
 /* Content container section config */
 .content-container section{
-    padding: 1.5rem 2rem 1rem 1.5rem;
+    padding: 1.5rem 0 1rem 1.5rem;
 }
 
 /* Titles and subtitles config */
@@ -150,13 +150,26 @@ h2,h4{
 /* Rows and cols config */
 
 .col{
-    width: calc(100% / 6);
+    width: calc((100% / 6) - 10px);
     text-align: center;
     padding: 10px;
 }
 
 .col img{
     width: 100%;
+    display: block;
+}
+
+/* Img circle config */
+.img-circle{
+    width: calc(100%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-circle img{
+    object-fit: cover;
+    object-position: center;
 }
 
 /* RESPONSIVE */
