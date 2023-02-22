@@ -71,7 +71,7 @@ a{
 main{
     width: 100%;
     height: calc(100% - 80px);
-    overflow: hidden;
+    
 }
 
 #playbar{
@@ -133,6 +133,10 @@ main{
     padding-bottom: 1rem;
 }
 
+.section-head > *{
+    padding-bottom: 1rem;
+}
+
 h2,h4{
     color: white;
     font-weight: bold;
@@ -174,5 +178,44 @@ h2,h4{
 
 /* RESPONSIVE */
 
+/* MEDIUM RESPONSIVE */
+@media screen and (min-width:769px) and (max-width: 991px){
 
+    .col{
+        width: calc((100% / 4) - 10px);
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* SMALL RESPONSIVE */
+@media screen and (min-width:577px) and (max-width:768px) {
+    
+    .col{
+        width: calc((100% / 2) - 10px);
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* EXTRA SMALL RESPONSIVE */
+@media screen and (max-width:576px){
+
+    .main-nav{
+        max-width: 70px;
+    }
+
+    .main-content{
+        width: calc(100% - 70px);
+        height: 100%;
+        background-color: var(--dark-blue);
+        overflow-y: auto;
+    }
+
+    .col{
+        width: calc((100% / 2) - 10px);
+        text-align: center;
+        padding: 10px;
+    }
+}
 
