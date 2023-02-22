@@ -84,7 +84,11 @@ a{
     cursor: pointer;
 }
 
-/* MAIN DIMENSION CONFIG */
+.main-nav li:hover{
+    border-left: 2px solid var(--spotify-green);
+}
+
+/* DIMENSION CONFIG */
 
 .wrapper{
     width: 100%;
@@ -110,6 +114,66 @@ main{
     height: calc(100vh - 80px);
     background-color: var(--dark);
 }
+
+/* MAIN NAV CONFIG */
+.nav-wrapper{
+    padding: 1rem;
+}
+
+ul li{
+    line-height: 2rem;
+    padding-left: 1rem;
+}
+
+ul li a{
+    padding-left: 10px;
+}
+
+/* logo config */
+.logo{
+    width: 100%;
+    padding: 1rem;
+}
+
+#big-logo{
+    width: 100%;
+}
+
+#small-logo{
+    width: 50%;
+    display: none;
+}
+
+/* navigator config */
+
+
+/* Before icons */
+
+#home::before{
+    content: "\f015";
+    font-family: "Font Awesome 6 free";
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+}
+
+#search::before{
+    content: "\f002";
+    font-family: "Font Awesome 6 free";
+    font-weight: 900;
+    color: white;
+    font-size: 25px;
+}
+
+#library::before{
+    content: "\e51e";
+    font-family: "Font Awesome 6 free";
+    font-weight: 900;
+    color: white;
+    font-size: 25px;
+}
+
+
 
 /* MAIN CONTENT CONFIG */
 
@@ -218,6 +282,12 @@ h2,h4{
 /* MEDIUM RESPONSIVE */
 @media screen and (min-width:769px) and (max-width: 991px){
 
+    /* MAIN NAV CONFIG */
+    #big-logo{
+        width: 85%;
+    }
+
+    /* MAIN CONFIG */
     .col{
         width: calc((100% / 4) - 10px);
         text-align: center;
@@ -228,6 +298,12 @@ h2,h4{
 /* SMALL RESPONSIVE */
 @media screen and (min-width:577px) and (max-width:768px) {
     
+    /* MAIN NAV CONFIG */
+    #big-logo{
+        width: 70%;
+    }
+
+    /* MAIN CONFIG */
     .col{
         width: calc((100% / 2) - 10px);
         text-align: center;
@@ -238,9 +314,21 @@ h2,h4{
 /* EXTRA SMALL RESPONSIVE */
 @media screen and (max-width:576px){
 
+    /* MAIN NAV CONFIG */
     .main-nav{
         max-width: 70px;
     }
+
+    #big-logo{
+        display: none;
+    }
+
+    #small-logo{
+        display: block;
+        width: 100%;
+    }
+
+    /* MAIN CONTENT CONFIG */
 
     .main-content{
         width: calc(100% - 70px);
