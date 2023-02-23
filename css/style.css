@@ -16,7 +16,7 @@ ul{
 
 /* Scrollbar config */
 ::-webkit-scrollbar{
-    width: 17px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -103,6 +103,7 @@ a{
 
 .main-nav li:hover{
     border-left: 2px solid var(--spotify-green);
+    color: white;
 }
 
 /* DIMENSION CONFIG */
@@ -134,9 +135,6 @@ main{
 }
 
 /* MAIN NAV CONFIG */
-.nav-wrapper{
-    padding: 1rem;
-}
 
 .main-nav ul li{
     line-height: 2.5rem;
@@ -147,24 +145,26 @@ main{
     padding-left: 10px;
 }
 
+.navigator{
+    margin-left: 3px;
+}
+
 /* logo config */
 .logo{
     width: 100%;
-    padding: 1rem;
     margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 #big-logo{
     width: 100%;
+    display: block;
 }
 
 #small-logo{
     width: 50%;
     display: none;
 }
-
-/* navigator config */
-
 
 /* Before icons */
 
@@ -173,14 +173,14 @@ main{
     font-family: "Font Awesome 6 free";
     font-weight: 900;
     font-size: 25px;
-    color: white;
+    color: var(--grey);
 }
 
 #search::before{
     content: "\f002";
     font-family: "Font Awesome 6 free";
     font-weight: 900;
-    color: white;
+    color: var(--grey);
     font-size: 25px;
 }
 
@@ -188,7 +188,7 @@ main{
     content: "\e51e";
     font-family: "Font Awesome 6 free";
     font-weight: 900;
-    color: white;
+    color: var(--grey);
     font-size: 25px;
 }
 
@@ -346,6 +346,8 @@ h2,h4{
 
     .logo{
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     #big-logo{
@@ -354,10 +356,17 @@ h2,h4{
 
     #small-logo{
         display: block;
-        width: 100%;
+        width: 70%;
         height: 100%;
     }
 
+    .main-nav ul li{
+        line-height: 2.5rem;
+    }
+
+    .navigator li a{
+        display: none;
+    }
     /* MAIN CONTENT CONFIG */
 
     .main-content{
