@@ -66,6 +66,10 @@ a{
     align-content: center;
 }
 
+.flex-column{
+    flex-direction: column;
+}
+
 /* UTILITY */
 .debug{
     border: 1px solid red;
@@ -75,10 +79,9 @@ a{
 }
 
 /* HOVER */
-.secondary-nav a:hover{
-    border-bottom: 2px solid var(--spotify-green);
+.secondary-nav li:hover .green-line{
+    display: block;
 }
-
 .upgrade-btn:hover{
     transform: scale(1.1);
     transition: 0.5s;
@@ -130,28 +133,105 @@ main{
 
 .main-nav{
     width: 240px;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     background-color: var(--dark);
+    position: relative;
 }
 
 /* MAIN NAV CONFIG */
 
-.main-nav ul li{
+.top-navigator ul li{
     line-height: 2.5rem;
     padding-left: 1rem;
 }
 
-.main-nav li a{
+.main-nav a{
     padding-left: 10px;
 }
 
-.navigator{
+.top-navigator, .bottom-navigator{
     margin-left: 3px;
+    margin-bottom: 1rem;
+}
+
+/* Bottom navigator config */
+
+.bottom-navigator ul li{
+    line-height: 2.5rem;
+    padding-left: 1rem;
+}
+
+.bottom-navigator h2{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.bottom-navigator ul li:first-child{
+    margin-top: 1rem;
+}
+
+/* add playlist config */
+.add-playlist{
+    background-color: var(--grey);
+    width: 25px;
+}
+
+.add-playlist i{
+    font-size: 20px;
+    color: var(--dark-grey);
+}
+
+/* playlist list config */
+
+.playlist-list ul{
+    color: var(--grey);
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+/* user box config */
+.userbox{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 10;
+    background-color: black;
+}
+
+.user-circle{
+    background-color: var(--grey);
+    width: 10%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userbox .subtitle{
+    padding-bottom: 10px;
+}
+
+.userbox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user-data{
+    padding-top: 1rem;
+    align-items: center;
+    
+}
+
+#username{
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
 }
 
 /* logo config */
 .logo{
-    width: 100%;
+    width: 80%;
     margin-bottom: 1rem;
     padding: 1rem;
 }
@@ -192,6 +272,10 @@ main{
     font-size: 25px;
 }
 
+.userbox .subtitle::before{
+    content: '\f358';
+    font-family: "Font Awesome 6 free";
+}
 
 
 /* MAIN CONTENT CONFIG */
@@ -234,10 +318,20 @@ main{
 
 .secondary-nav ul li{
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .secondary-nav a{
     padding-bottom: 5px;
+}
+
+.green-line{
+    height: 2px;
+    width: 50px;
+    background-color: var(--spotify-green);
+    display: none;
 }
 
 /* Content container section config */
@@ -364,9 +458,14 @@ h2,h4{
         line-height: 2.5rem;
     }
 
-    .navigator li a{
+    .main-nav a{
         display: none;
     }
+
+    .bottom-navigator h2,.add-playlist{
+        display: none;
+    }
+
     /* MAIN CONTENT CONFIG */
 
     .main-content{
@@ -393,5 +492,13 @@ h2,h4{
 @media screen and (max-width: 400px) {
     .col{
         width: 100%;
+    }
+}
+
+
+/* VERTICAL RESPONSIVE */
+@media  screen and (max-height:350px ) {
+    .userbox{
+        display: none;
     }
 }
