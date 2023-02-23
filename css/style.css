@@ -70,6 +70,14 @@ a{
     flex-direction: column;
 }
 
+.s-between{
+    justify-content: space-between;
+}
+
+.s-around{
+    justify-content: space-around;
+}
+
 /* UTILITY */
 .debug{
     border: 1px solid red;
@@ -77,7 +85,14 @@ a{
 .text-up{
     text-transform: uppercase;
 }
-
+.text-small{
+    font-size: 10px;
+}
+.song-title{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
 /* HOVER */
 .secondary-nav li:hover .green-line{
     display: block;
@@ -141,7 +156,7 @@ main{
 /* MAIN NAV CONFIG */
 
 .top-navigator ul li{
-    line-height: 2.5rem;
+    line-height: 2rem;
     padding-left: 1rem;
 }
 
@@ -396,6 +411,100 @@ h2,h4{
     object-position: center;
 }
 
+/* PLAYBAR CONFIG */
+.song-block, .volume-block{
+    width: 250px;
+}
+
+.control-block{
+    width: 40%;   
+}
+
+/* Song block config */
+.song-block{
+    color: var(--grey);
+    padding: .7rem;
+}
+.song-img{
+    width: 30%;
+}
+
+.song-img img{
+    width: 100%;
+}
+
+.song-block i{
+    padding: 5px;
+}
+
+.song-name{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+/* Control block config */
+
+
+/* control buttons div config */
+.control-buttons{
+    height: 40%;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.control-buttons i{
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.play i{
+    font-size: 30px;
+    padding: 5px;
+}
+
+.play i:hover{
+    scale: 1.1;
+}
+/* control time config */
+
+.control-time{
+    height: 50%;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+.control-time p{
+    color: white;
+    padding: 1rem;
+}
+
+.control-time .bar-container{
+    width: 80%;
+}
+/* Volume block config */
+.bar-container{
+    width: 60%;
+    height: 5px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.2);   
+}
+
+.bar{
+    width: 0;
+    height: 100%;
+    background-color: var(--grey);
+    border-radius: 25px;
+}
+
+.bar-container:hover .bar{
+    width: 100%;
+    transition: 3s;
+}
+
+.volume-block i{
+    color: rgba(255, 255, 255, 0.5);
+}
+
 /* RESPONSIVE */
 
 /* MEDIUM RESPONSIVE */
@@ -428,6 +537,13 @@ h2,h4{
         text-align: center;
         padding: 10px;
     }
+
+    /* PLAYBAR CONFIG */
+
+    .song-block, .volume-block{
+        width: 200px;
+    }
+    
 }
 
 /* EXTRA SMALL RESPONSIVE */
@@ -458,8 +574,16 @@ h2,h4{
         line-height: 2.5rem;
     }
 
-    .main-nav a{
+    .main-nav a,
+    .bottom-navigator li,
+    .bottom-navigator h2,
+    .add-playlist,
+    .bottom-navigator p{
         display: none;
+    }
+
+    .user-circle{
+        width: 100%;
     }
 
     .bottom-navigator h2,.add-playlist{
@@ -486,6 +610,15 @@ h2,h4{
     /* CALL TO ACTION CONFIG */
     .call-to-action{
         width: calc(100% - 70px);
+    }
+
+    /* PLAYBAR CONFIG */
+    #playbar{
+        justify-content: center;
+    }
+
+    .song-block, .volume-block{
+        display: none;
     }
 }
 
