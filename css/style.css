@@ -95,7 +95,8 @@ a{
 }
 /* HOVER */
 .secondary-nav li:hover .green-line{
-    display: block;
+    opacity: 1;
+    transition: 0.5s;
 }
 .upgrade-btn:hover{
     transform: scale(1.1);
@@ -104,24 +105,43 @@ a{
     border: 1px solid white;
 }
 
-.img-hover-box:hover .img-hover-position{
+.cover .img-hover-box::after{
+    font-family: 'Font Awesome 6 Free';
+    font-size: 3rem;
+    content: '\f144';
     display: flex;
+    opacity: 0;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: -0;
-    left: -0;
-    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.7s;
     color: white;
-    font-size: 50px;
+}
+
+.cover:hover .img-hover-box::after{
+    opacity: 1;
     cursor: pointer;
 }
 
 .main-nav li:hover{
     border-left: 2px solid var(--spotify-green);
     color: white;
+    cursor: pointer;
+}
+
+.song-block i:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.volume-block i:hover{
+    color: white;
+    cursor: pointer;
 }
 
 /* DIMENSION CONFIG */
@@ -346,7 +366,7 @@ main{
     height: 2px;
     width: 50px;
     background-color: var(--spotify-green);
-    display: none;
+    opacity: 0;
 }
 
 /* Content container section config */
@@ -387,12 +407,7 @@ h2,h4{
 }
 
 .img-hover-box{
-    width: 100%;
     position: relative;
-}
-
-.img-hover-position{
-    display: none;
 }
 
 .img-hover-box img{
